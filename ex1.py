@@ -12,7 +12,7 @@ import scipy
 from matplotlib import pyplot, cm
 from mpl_toolkits.mplot3d import Axes3D
 
-EX_DIRECTORY_PATH = '/Users/saburookita/Personal Projects/MachineLearningPy/'
+# EX_DIRECTORY_PATH = '/Users/saburookita/Personal Projects/MachineLearningPy/'
 
 def part1():
     A = eye(5)
@@ -102,7 +102,7 @@ def part2_1():
 
 
 def part2_2():
-    data = genfromtxt( EX_DIRECTORY_PATH + 'ex1data1.txt', delimiter=',')
+    data = genfromtxt( 'ex1data1.txt', delimiter=',')
     X, y = data[:, 0], data[:, 1]
     m 	 = len(y)
     y 	 = y.reshape(m, 1)
@@ -114,13 +114,13 @@ def part2_2():
 
     cost 	= computeCost(X, y, theta)  # should be 32.07
     theta 	= gradientDescent(X, y, theta, alpha, iterations)
-    print cost
-    print theta
+    print (cost)
+    print (theta)
 
     predict1 = array([1, 3.5]).dot(theta)
     predict2 = array([1, 7]).dot(theta)
-    print predict1
-    print predict2
+    print (predict1)
+    print (predict2)
 
     plot(X[:, 1], y)
     pyplot.plot(X[:, 1], X.dot(theta), 'b-')
@@ -128,7 +128,7 @@ def part2_2():
 
 
 def part2_4():
-    data = genfromtxt( EX_DIRECTORY_PATH + "/ex1data1.txt", delimiter=',')
+    data = genfromtxt( "ex1data1.txt", delimiter=',')
     X, y = data[:, 0], data[:, 1]
     m 	 = len(y)
     y 	 = y.reshape(m, 1)
